@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Sing Up </title>
+	</head>
+	
+	<body>
+		<center>
+		<div align="center" style="background-color:#F2F5A9; padding:20px; width:400px">
+		<h2> Sign Up </h2>
+		
+		<form align="left" method="post" action="signUp">
+			
+			<p> 
+				<label> First Name </label> </br> <input type="text" name="username" required />	
+			</p> 
+			<p> 
+				<label> Last Name </label> </br> <input type="text" name="userlastname" required />	
+			</p>
+			<p 
+				<label> Email </label> </br> <input type="email" name="usermail" required placeholder="Enter a valid email address" />	
+			</p>
+			<p> 
+				<label> Birthday </label> </br> <input type="date" name="userbirthday" required />	
+			</p>
+			<p> 
+				<label>What is your favourite sport?</label> </br>
+				<select name="sport" id="sport">
+					<option value="Aerobics">Aerobics</option>
+					<option value="Basketball">Basketball</option>
+					<option value="Boxing">Boxing</option>
+					<option value="Cycling">Cycling</option>
+					<option value="Football">Football</option>
+					<option value="Golf">Golf</option>
+					<option value="Handball">Handball</option>
+					<option value="Hockey">Hockey</option>
+					<option value="Running">Running</option>
+					<option value="Skiing">Skiing</option>
+					<option value="Swimming">Swimming</option>
+					<option value="Tennis">Tennis</option>
+				</select>
+			</p>
+			<p> 
+				<label>Write a small description about you</label> </br>
+				<textarea name="biography" id="biography"  style= "width:228px; height:100px; overflow-y:scroll; resize:none"></textarea>
+			</p>
+			
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+			<input type="reset" value="Cancel" style="width:60px; height:30px"  ></code>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			<input type="submit" value="Submit" style=" background-color: #A9F5BC; width:60px; height:30px; align:right"  ></code>
+		</form>	
+		</div>
+		</center>
+	</body>
+</html>
