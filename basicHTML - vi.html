@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<title> Sing Up </title>
 	</head>
-	
 	<body>
 		<center>
 		<div align="center" style="background-color:#F2F5A9; padding:20px; width:400px">
 		<h2> Sign Up </h2>
 		
-		<form align="left" method="post" action="signUp">
-			
+		<div align="left">
+		<form method="post" action="signUp">
+			<fieldset>
+			<legend>Enter your personal information</legend>
 			<p> 
-				<label> First Name </label> </br> <input type="text" name="username" required />	
+				<label> First Name </label> </br> <input type="text" name="username" required placeholder="First name" />	
 			</p> 
 			<p> 
-				<label> Last Name </label> </br> <input type="text" name="userlastname" required />	
+				<label> Last Name </label> </br> <input type="text" name="userlastname" required placeholder="Last name" />	
 			</p>
-			<p 
+			<p>
 				<label> Email </label> </br> <input type="email" name="usermail" required placeholder="Enter a valid email address" />	
 			</p>
 			<p> 
-				<label> Birthday </label> </br> <input type="date" name="userbirthday" required />	
+				<label> Birthday </label> </br> <input type="date" name="userbirthday" required/>	
 			</p>
 			<p> 
 				<label>What is your favourite sport?</label> </br>
@@ -39,6 +40,7 @@
 					<option value="Skiing">Skiing</option>
 					<option value="Swimming">Swimming</option>
 					<option value="Tennis">Tennis</option>
+					<option value="Otro">Otro</option>
 				</select>
 			</p>
 			<p> 
@@ -47,10 +49,12 @@
 			</p>
 			
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-			<input type="reset" value="Cancel" style="width:60px; height:30px"  ></code>
+			<input type="reset" value="Cancel" style="width:60px; height:30px">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			<input type="submit" value="Submit" style=" background-color: #A9F5BC; width:60px; height:30px; align:right"  ></code>
-		</form>	
+			<input type="submit" value="Submit" align="right" style=" background-color: #A9F5BC; width:60px; height:30px">
+		</fieldset>
+		</form>
+		</div>	
 		</div>
 		</center>
 	</body>
