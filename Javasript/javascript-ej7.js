@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
     $('section.hidden').fadeIn(1000).removeClass('hidden');
-   })
+   });
 
-document.getElementById('btn').addEventListener("onclick", function(){
+document.getElementById('btn').addEventListener("click", function(){
     var showData = function(data){
         document.getElementById('rta').innerHTML = data.value.joke;
     }
