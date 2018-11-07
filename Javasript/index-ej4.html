@@ -19,9 +19,13 @@
  
         <section class="hidden">
             <h1>Hello Word</h1>
-    
-            <button id="btn" onclick="makeACall()"> Click me </button>   
-            <p id="rta"></p>
+
+            <div class="search">
+                <h3>Please enter a word to look for</h3> 
+                <input id="textValue" type="text"> 
+                <button id="btn" onclick="searchText(textValue)"> Search </button>   
+                <div id="rta"></div>
+            </div>
         </section>
 
 

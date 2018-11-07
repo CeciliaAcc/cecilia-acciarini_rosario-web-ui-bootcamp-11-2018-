@@ -10,3 +10,6 @@ body{
     display: none;
 }
 
+.search {
+    float: left;
+}

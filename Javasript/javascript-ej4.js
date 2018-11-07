@@ -4,13 +4,17 @@ $(document).ready(function() {
    }    
 )
 
-function makeACall(){
+function searchText(textValue){
+                var textTosearch = document.getElementById("textValue").value;
+                console.log(textTosearch);
+                var textTosearch = 'https://api.github.com/search/repositories?q=' + textTosearch;
+                console.log(textTosearch);
                 var req = new XMLHttpRequest();
-                req.open('Get', 'https://api.github.com/search/repositories?q=JavaScript', true);
+                req.open('GET', textTosearch, true);
                 req.onreadystatechange =  function () {
                     if (req.readyState == 4 && req.status == 200){
                         console.log("Request done successfully");
-                        var repo = JSON.parse(this.responseText);
+                        var repo = JSON.parse(req.responseText);
                         var count = repo.items;
                         document.getElementById('rta').innerHTML += "Total Count" + api.total_count + "<p>";
                         
@@ -22,7 +26,7 @@ function makeACall(){
                         document.getElementById('rta').innerHTML="<span style='color:#FF0000'> hi </span>";
                         document.getElementById('rta').innerHTML += 'ERROR';
                     }
-                req.open('GET', valueTosearch, true);
+                
                 req.send(null); 
 
                 }
