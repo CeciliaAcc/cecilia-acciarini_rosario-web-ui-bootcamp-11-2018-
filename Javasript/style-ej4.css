@@ -1,0 +1,45 @@
+* {
+    text-align: center;
+}
+
+body{
+    background-color: lavenderblush;
+}
+
+.hidden{
+    display: none;
+}
+
+.search {
+    margin-left: 10%;
+    text-align: left;
+    float: left;
+    width: 20%;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-style: ridge;
+}
+    #search:hover {
+        border: 1px solid #70c52e;
+    }
+
+#textValue{
+     text-align: left;
+     float: left;
+    padding-left: 5%;
+}
+
+#btn{
+    margin-left: 5px;
+    width: 65px;
+    height: 20px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+    
+#rta {
+    float: right;
+}
+
+

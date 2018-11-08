@@ -1,3 +1,19 @@
+/*   Firts points of the 3th exercise
+
+  function makeAcall(){
+        var req = new XMLHttpRequest();
+        req.open('Get', "http://api.icndb.com/jokes/random", true);
+        req.onreadystatechange =  function () {
+            if (req.readyState == 4 && req.status == 200){
+                console.log("Request done successfully");
+                document.getElementById('rta').innerHTML = req.responseText;
+            }else {
+                console.log("Error loading page");
+                document.getElementById('rta').innerHTML = ("Error loading page\n");
+                }
+            }
+        req.send(null); 
+}  */
 
 $(document).ready(function() {
     $('section.hidden').fadeIn(1000).removeClass('hidden');
@@ -5,13 +21,13 @@ $(document).ready(function() {
     document.getElementById('btn').addEventListener("click", function(){
         var config = new Object();
         config.url = "http://api.icndb.com/jokes/random";
-        config.callback = showData;
-        getFetch(config);
+        config.callback = showJoke;
+        fetchData(config);
     });
 });
 
-function showData(data){
-    document.getElementById('rta').innerHTML = data.value.joke;
+function showJoke(joke){
+    document.getElementById('rta').innerHTML = joke.value.joke;
 }
 
 function makeACall(config) 
@@ -24,7 +40,8 @@ function makeACall(config)
             if (req.readyState == 4 && req.status == 200)
             {
                 console.log("Request done successfully");
-                config.callback(JSON.parse(resolve(req.responseText))); 
+                resolve(req.responseText);
+                config.callback(JSON.parse(req.responseText)); 
             }
             else
             {
@@ -39,18 +56,18 @@ function makeACall(config)
 }
 
 
-function getFetch(config) {
+function fetchData(config) {
     fetch(config.url)
         .then(
-            function (respose){
-                if (respose.status !== 200 ){
+            function(response){
+                if (response.status !== 200 ){
                     console.log("Error code: " + response.statusText);
                     document.getElementById('rta').innerHTML="Server error: " + req.statusText; 
                     document.getElementById('rta').style.color = "red";
                     return;
                 }
-                respose.json().then(function(data){
-                config.callback(data);
+                response.json().then(function(joke){
+                config.callback(joke);
                 });
             }
         )
