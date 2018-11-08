@@ -7,28 +7,25 @@ $(document).ready(function() {
 function searchText(textValue){
                 var textTosearch = document.getElementById("textValue").value;
                 console.log(textTosearch);
-                var textTosearch = 'https://api.github.com/search/repositories?q=' + textTosearch;
-                console.log(textTosearch);
+                var url = 'https://api.github.com/search/repositories?q=' + textTosearch;
+                console.log(url);
                 var req = new XMLHttpRequest();
-                req.open('GET', textTosearch, true);
                 req.onreadystatechange =  function () {
                     if (req.readyState == 4 && req.status == 200){
                         console.log("Request done successfully");
                         var repo = JSON.parse(req.responseText);
                         var count = repo.items;
-                        document.getElementById('rta').innerHTML += "Total Count" + api.total_count + "<p>";
-                        
+                        document.getElementById('rta').innerHTML+=  "Total Count: " + repo.total_count;
+
                         for (var i = 0; i < count.length; i++){
-                           document.getElementById('rta').innerHTML += "<li>"+ [i+1]+"<p> Descripción de items:" + api.items[i]["description"];
+                           document.getElementById('rta').innerHTML += "<ul>"+ [i+1] + ") " + repo.items[i]["description"];
                         }
-                    }else {
-                        console.log("Error loading page")
-                        document.getElementById('rta').innerHTML="<span style='color:#FF0000'> hi </span>";
-                        document.getElementById('rta').innerHTML += 'ERROR';
                     }
-                
+                           
+                }
+                req.open('GET',  url, true);
                 req.send(null); 
 
-                }
             }
+            
 
