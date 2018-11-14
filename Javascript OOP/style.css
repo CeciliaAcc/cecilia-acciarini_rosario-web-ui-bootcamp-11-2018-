@@ -1,0 +1,47 @@
+body{
+    background-color: lightsalmon;
+}
+
+.header {
+    color: black;
+	height: 9%;
+	width: 100%; 
+	left: 0; 
+	top: 0; 
+	position: fixed; 
+}
+.add_movie {
+    float: left;
+    width: 40%;
+    height: 250px;
+    margin-left: 5%;
+    position: fixed;
+    top:50px;
+}
+
+.btn {
+    margin-left: 40%;
+    margin-top: 2%;
+}
+
+input,select, fieldset {
+    padding-top: 2%;
+    padding-left: 2%;
+    background-color: whitesmoke;
+    width: 90%;
+    font-size: 100%;
+    margin: 1%;
+    padding: 1%;
+    border-style: ridge;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .add_movie{
+        width: 100%;
+        position: absolute;
+        top: 15%;
+    }
+   
+}
