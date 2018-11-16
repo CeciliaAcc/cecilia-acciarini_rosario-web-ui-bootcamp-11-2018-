@@ -1,0 +1,48 @@
+<div class="movieList" ng-controller="Movies" >
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h3>Movie List</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="list-group">
+                    <li *ngFor="let movie of movieList" class="list-group-item">
+                             {{movie.tittle}}
+                                
+                        <div class="buttons">
+                            <button class="buttonDetail">
+                                    Detail
+                            </button>
+                            <button class="buttonEdit">
+                                    Edit
+                            </button>
+                            <button class="buttonType">
+                                    Delete
+                            </button> 
+                        </div> 
+                    </li>            
+                </td>
+            </tr>
+                
+            
+           
+            <tr>
+                <td class="tfooter">
+                    <button class="buttonAdd">
+                            Add movie
+                    </button>
+                </td>
+            </tr>
+             
+        </tbody>
+        
+    </table>
+  </div>
+                             
+                            
+                           
+                       

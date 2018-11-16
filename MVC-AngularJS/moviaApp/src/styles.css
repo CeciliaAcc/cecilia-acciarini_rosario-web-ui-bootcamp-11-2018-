@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("0B4ASi.jpg");
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    font-family: 'Lucida Sans';
+}
+
+.header{
+    text-align: center;
+    color: brown;
+    font-size: 28px;
+}

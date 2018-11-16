@@ -1,0 +1,59 @@
+
+.movieList{
+    width: 50%;
+    height: 100%;
+    margin-top: 9%;
+    margin-left: 3%;
+    font-size: 18px;
+    background: #8E0E00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+
+}
+
+.movieDetails{
+    width: 40%;
+}
+
+.table{
+    width: 100%;
+    border: solid 1px #000000;
+}
+
+td {
+    height: 40px;
+    border-top: solid 1px #000000;
+    padding-left: 2%;
+}
+
+.buttons{
+    float: right;
+    color: lightgray;
+    margin-right: 2%;
+}
+
+    .buttonDetail{
+        background-color: rgb(122, 219, 122);
+        border-color: rgb(122, 219, 122); 
+        margin-right: 5px;
+    }
+
+    .buttonEdit{
+        background-color: rgb(112, 164, 243);
+        border-color: rgb(112, 164, 243);
+        margin-right: 5px;
+    }
+
+    .buttonType{
+        background-color: rgb(235, 90, 90); 
+        border-color: rgb(235, 90, 90);
+        margin-right: 5px;
+    }
+    .buttonAdd{
+        background-color: lightgray ;
+        border-color: lightgray; 
+    }
+
+.tfooter{
+    text-align: center;
+}
