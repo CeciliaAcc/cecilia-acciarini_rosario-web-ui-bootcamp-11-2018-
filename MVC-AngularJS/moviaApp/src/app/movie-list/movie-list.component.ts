@@ -18,29 +18,8 @@ export class MovieListComponent implements OnInit {
 
   selectedMovie: Movies = new Movies();
 
-  addNew() {
-    this.selectedMovie.id = this.movieList.length+1;
-    this.movieList.push(this.selectedMovie);
-
-    this.selectedMovie = new Movies();
-  }
-
-  editMovie(movie: Movies) {
-    if (this.selectedMovie.id === 0){
-      this.selectedMovie.id = this.movieList.length+1;
-      this.movieList.push(this.selectedMovie);
-    }
-  }
-
-  deleteMovie(movie: Movies) {
-    if (this.selectedMovie.id === 0){
-      this.selectedMovie.id = this.movieList.length+1;
-      this.movieList.push(this.selectedMovie);
-    }
-  }
-
-
   ngOnInit() {
   }
 
 }
+

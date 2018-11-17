@@ -1,48 +1,37 @@
 <div class="movieList" ng-controller="Movies" >
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    <h3>Movie List</h3>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="list-group">
-                    <li *ngFor="let movie of movieList" class="list-group-item">
-                             {{movie.tittle}}
-                                
-                        <div class="buttons">
-                            <button class="buttonDetail">
-                                    Detail
-                            </button>
-                            <button class="buttonEdit">
-                                    Edit
-                            </button>
-                            <button class="buttonType">
-                                    Delete
-                            </button> 
-                        </div> 
-                    </li>            
-                </td>
-            </tr>
-                
-            
-           
-            <tr>
-                <td class="tfooter">
-                    <button class="buttonAdd">
-                            Add movie
-                    </button>
-                </td>
-            </tr>
-             
-        </tbody>
+    
+    <div class="movieList-header">
+        <h3>Movie List</h3>
+    </div>
+
+    <div class="movieList-body">
+     
+        <ul *ngFor="let movie of movieList" 
+            class="list-group-item" 
+            (click)="openForEdit(movie)"
+            [class.active]="movie == selectedMovie"
+            >
+                {{movie.id}} - {{movie.tittle}}
+                       
+            <div class="buttons">
+                <button  class="buttonDetail">
+                    Detail
+                </button>
+                <button onclick="addorEdit()" class="buttonEdit">
+                    Edit
+                </button>
+            </div> 
+        </ul> 
+      
+    </div>        
         
-    </table>
-  </div>
+    <div class="movieList-footer">
+        <button type="button" data-toggle="modal" data-target="#myModal" class="buttonAdd">
+            Add movie
+        </button>
+    </div>
+
+</div>
                              
                             
                            
-                       
