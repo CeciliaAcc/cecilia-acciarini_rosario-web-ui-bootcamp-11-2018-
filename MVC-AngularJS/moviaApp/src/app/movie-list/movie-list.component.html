@@ -16,12 +16,9 @@
                 {{movie.id}} - {{movie.tittle}}
                        
             <div class="buttons">
-                <button onclick="showDetail()"  class="buttonDetail">
-                    Detail
-                </button>
-                <button onclick="addorEdit()" class="buttonEdit">
-                    Edit
-                </button>
+                <button [routerLink]="['/movie/id/', movie.id]" class="buttonDetail">Detail</button>
+                
+                <button routerLink="/movieForm" class="buttonEdit">Edit</button>      
             </div> 
         </ul> 
       

@@ -1,13 +1,14 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Movies } from '../models/movies';
-import { AddMovieComponent } from '../add-movie/add-movie.component';
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
+
 export class MovieListComponent implements OnInit {
+
 
   constructor() { }
 
@@ -16,7 +17,7 @@ export class MovieListComponent implements OnInit {
     { id:2, tittle: 'Back to the Future II', year: 1989, duration: 108, description: 'Marty McFly has only just gotten back from the past, when he is once again picked up by Dr. Emmett Brown and sent through time to the future. Martys job in the future is to pose as his own son to prevent him from being thrown in prison. Unfortunately, things get worse when the future changes the present.'},
     { id:3, tittle: 'Back to the Future III', year: 1990, duration: 118, description: 'Stranded in 1955, Marty McFly receives written word from his friend, Doctor Emmett Brown, as to where can be found the DeLorean time machine. However, an unfortunate discovery prompts Marty to go to his friends aid. Using the time machine, Marty travels to the old west where his friend has run afoul of a gang of thugs and has fallen in love with a local schoolteacher. Using the technology from the time, Marty and Emmett devise one last chance to send the two of them back to the future.' },
   ];
-
+  
   selectedMovie: Movies = new Movies();
 
   ngOnInit() {
