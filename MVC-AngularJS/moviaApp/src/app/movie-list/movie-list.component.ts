@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Movies } from '../models/movies';
+import { AddMovieComponent } from '../add-movie/add-movie.component';
 
 @Component({
   selector: 'app-movie-list',

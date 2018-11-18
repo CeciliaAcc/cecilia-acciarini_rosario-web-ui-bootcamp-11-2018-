@@ -1,0 +1,32 @@
+<div class="container-fluid" id="movieDetail">
+    <div class="row">
+      <div class="col-md-12" [class.active]="movie == selectedMovie">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+
+          <h3>{{movie.tittle}}</h3>
+        <dl>
+          <dt>
+            Year
+          </dt>
+          <dd>
+              {{movie.year}}
+          </dd>
+          <dt>
+            Duration
+          </dt>
+          <dd>
+              {{movie.duration}}
+          </dd>
+          <dt>
+            Description
+          </dt>
+          <dd>
+              {{movie.description}}
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>

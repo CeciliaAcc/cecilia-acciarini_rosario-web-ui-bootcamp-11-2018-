@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     AppComponent,
     MovieListComponent,
     AddMovieComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }

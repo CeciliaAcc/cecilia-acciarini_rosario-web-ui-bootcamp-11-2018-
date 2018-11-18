@@ -1,52 +1,51 @@
-
-<div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        
-        <div class="modal-header">
-          <h5 class="modal-title">Movie Form</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="container" id="addMovieForm">
+    
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    
+    <h3>Movie Form</h3>
+    
+    <form role="form" >
+        <div class="form-group">
+             
+            <label for="formControlSelect1">
+                Title
+            </label>
+            <input type="text" [(ngModel)]="selectedMovie.tittle" class="form-control" placeholder="Ingrese el nombre">
         </div>
+        <div class="form-group">
+    
+            <label for="formControlSelect2">
+                Year
+            </label>
+            <input type="number" [(ngModel)]="selectedMovie.year" class="form-control" placeholder="Ingrese el año de estreno">
+        </div>
+        <div class="form-group">
+    
+                <label for="formControlSelect3">
+                    Duration
+                </label>
+                <input type="number" [(ngModel)]="selectedMovie.duration" class="form-control" placeholder="Ingrese la duracion (en minutos)">
+        </div>
+        <div class="form-group">
+    
+                <label for="exampleFormControlTextarea1">
+                    Write a short description
+                </label>
+                <textarea type="text" [(ngModel)]="selectedMovie.description" class="form-control" rows="3"></textarea>
+        </div>   
         
-        <form>
-            <div class="modal-body" id="addMovieForm">
-                <div class="form-group">
-                    <label for="formControlSelect1">Tittle</label>
-                    <input type="text" [(ngModel)]="selectedMovie.tittle" name="formControlInput1" class="form-control" placeholder="Ingrese el nombre">
-                </div>
-                        
-                <div class="form-group">
-                    <label for="formControlSelect2">Year</label>
-                    <input type="year" [(ngModel)]="selectedMovie.year" name="formControlInput2" class="form-control" placeholder="Ingrese el año de estreno">
-                </div>
-                        
-                <div class="form-group">
-                    <label for="formControlSelect3">Duration</label>
-                    <input type="number" [(ngModel)]="selectedMovie.duration" name="formControlInput3" class="form-control" placeholder="Ingrese la duracion (en minutos)">
-                </div>
-                        
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Write a short description</label>
-                    <textarea class="form-control" [(ngModel)]="selectedMovie.description" name="formControlTextarea1" rows="3"></textarea>
-                </div>
-                        
-                <input type="submit" [(ngModel)]="selectedMovie">             
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" (click)="addorEdit()" class="btn btn-primary">Save changes</button>
-                <button 
-                    class="buttonType"
-                    *ngIf = "selectedMovie.id !== 0"
-                    (click)="delete()"
-                    >
-                    Delete
-                </button>  
-            </div>
-        </form> 
-
-      </div>
-    </div>
-  </div>
+        <button type="submit" class="btn btn-primary btn-sm" id="btnSaveChange">
+            Save changes
+        </button>
+        <button 
+            class="btn btn-sm btn-danger"
+            *ngIf = "selectedMovie.id !== 0"
+            (click)="delete()"
+            >
+            Delete
+        </button>  
+    </form>
+</div>            
+      

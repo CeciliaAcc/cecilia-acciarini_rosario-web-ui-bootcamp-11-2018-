@@ -1,4 +1,6 @@
-<div class="movieList" ng-controller="Movies" >
+
+
+    <div class="movieList" ng-controller="Movies" >
     
     <div class="movieList-header">
         <h3>Movie List</h3>
@@ -14,7 +16,7 @@
                 {{movie.id}} - {{movie.tittle}}
                        
             <div class="buttons">
-                <button  class="buttonDetail">
+                <button onclick="showDetail()"  class="buttonDetail">
                     Detail
                 </button>
                 <button onclick="addorEdit()" class="buttonEdit">
@@ -26,12 +28,15 @@
     </div>        
         
     <div class="movieList-footer">
-        <button type="button" data-toggle="modal" data-target="#myModal" class="buttonAdd">
+        <button  (click) ="app-add-movie" ng-hide = "formVisibility" type="button" data-toggle="modal" data-target="#sideBar" class="buttonAdd">
             Add movie
         </button>
     </div>
 
-</div>
+    </div>
+
+
+
                              
                             
                            
