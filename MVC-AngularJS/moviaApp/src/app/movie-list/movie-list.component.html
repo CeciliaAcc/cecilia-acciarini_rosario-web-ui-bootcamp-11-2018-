@@ -10,27 +10,29 @@
      
         <ul *ngFor="let movie of movieList" 
             class="list-group-item" 
-            (click)="openForEdit(movie)"
             [class.active]="movie == selectedMovie"
             >
                 {{movie.id}} - {{movie.tittle}}
                        
             <div class="buttons">
-                <button [routerLink]="['/movie/id/', movie.id]" class="buttonDetail">Detail</button>
+                <button [routerLink]="['/movie/id/', movie.id]"  class="buttonDetail">Detail</button>
                 
-                <button routerLink="/movieForm" class="buttonEdit">Edit</button>      
+                <button  (click)="openForEdit(movie)" routerLink="/movieForm" class="buttonEdit">Edit</button>      
             </div> 
         </ul> 
       
     </div>        
         
     <div class="movieList-footer">
-        <button  (click) ="app-add-movie" ng-hide = "formVisibility" type="button" data-toggle="modal" data-target="#sideBar" class="buttonAdd">
+        <button  routerLink="/movieForm" class="buttonAdd">
             Add movie
         </button>
     </div>
 
     </div>
+    <section>
+        <router-outlet></router-outlet>
+    </section>  
 
 
 

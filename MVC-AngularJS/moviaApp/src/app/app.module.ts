@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { MyserviceService } from './myservice.service';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
@@ -24,7 +25,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    MyserviceService
+  ],
   bootstrap: [AppComponent],
 })
 

@@ -1,4 +1,7 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { MyserviceService } from '../myservice.service';
 import { Movies } from '../models/movies';
 
 
@@ -9,33 +12,30 @@ import { Movies } from '../models/movies';
 })
 export class AddMovieComponent implements OnInit {
 
-  constructor() { }
-
-  movieList: Movies[] = [];
-
-  selectedMovie: Movies = new Movies();
-
-  openForEdit(movie: Movies) {
-    this.selectedMovie = movie;
-  }
-
-  addorEdit(){
-    if (this.selectedMovie.id === 0){
-    this.selectedMovie.id = this.movieList.length + 1;
-    this.movieList.push(this.selectedMovie);
-    }
-    this.selectedMovie = new Movies();
-  }
-
-  delete(){
-    if( confirm("Are you sure you want to delete it?")){
-      this.movieList = this.movieList.filter(x => x != this.selectedMovie);
-      this.selectedMovie = new Movies();
-    }
-  }
+  constructor(private route: ActivatedRoute ,private movieService: MyserviceService) { }
 
   ngOnInit() {
+    this.movieService.getMovies();
+    this.resetForm();
   }
+
+  onSubmit(movieForm: NgForm)
+  {
+    if(movieForm.value.id == null)
+      this.movieService.insertMovie(movieForm.value);
+    else
+    this.movieService.updateMovie(movieForm.value);
+    
+    this.resetForm(movieForm);
+  }
+
+  resetForm(movieForm?: NgForm)
+  {
+    if(movieForm != null)
+      movieForm.reset();
+      this.movieService.selectedMovie = new Movies();
+  }
+
 
 }
 
