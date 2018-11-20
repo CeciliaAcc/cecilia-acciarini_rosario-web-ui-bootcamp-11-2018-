@@ -17,7 +17,7 @@
             <div class="buttons">
                 <button [routerLink]="['/movie/id/', movie.id]"  class="buttonDetail">Detail</button>
                 
-                <button  (click)="openForEdit(movie)" routerLink="/movieForm" class="buttonEdit">Edit</button>      
+                <button [routerLink]="['/movieForm', movie.id]"  (click)="edit(movie)" class="buttonEdit">Edit</button>      
             </div> 
         </ul> 
       

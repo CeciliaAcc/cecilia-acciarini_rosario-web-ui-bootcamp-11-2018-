@@ -45,13 +45,10 @@
         <button type="submit" class="btn btn-primary btn-sm" id="btnSaveChange">
             Save changes
         </button>
-        <button 
-            class="btn btn-sm btn-danger"
-            *ngIf = "movieService.selectedMovie.id !== 0"
-            (click)="delete()"
-            >
-            Delete
-        </button>  
+        <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+            <i class="fas fa-sync-alt"></i> Reset
+        </button>
+         
     </form>
 </div>            
       

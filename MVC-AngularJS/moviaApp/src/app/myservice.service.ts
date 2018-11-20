@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { Movies } from './models/movies';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class MyserviceService {
 
   movieList: Movies[];
 
-  constructor() { 
+  constructor(private db: AngularFireDatabase) { 
     this.movieList = [
       { id:1, tittle: 'Back to the Future I', year: 1985, duration: 116, description: 'Marty McFly, a typical American teenager of the Eighties, is accidentally sent back to 1955 in a plutonium-powered DeLorean "time machine" invented by a slightly mad scientist. During his often hysterical, always amazing trip back in time, Marty must make certain his teenage parents-to-be meet and fall in love - so he can get back to the future.' },
       { id:2, tittle: 'Back to the Future II', year: 1989, duration: 108, description: 'Marty McFly has only just gotten back from the past, when he is once again picked up by Dr. Emmett Brown and sent through time to the future. Martys job in the future is to pose as his own son to prevent him from being thrown in prison. Unfortunately, things get worse when the future changes the present.'},
@@ -24,7 +25,7 @@ export class MyserviceService {
     return this.movieList;
   }
 
-  insertMovie(selectedMovie) {
+  insertMovie(selectedMovie: Movies) {
     this.movieList.push({
       id: selectedMovie.id,
       tittle: selectedMovie.tittle,
@@ -33,25 +34,24 @@ export class MyserviceService {
       description: selectedMovie.description
     });
   }
-
-  updateMovie(selectedMovie)
+/*
+  updateMovie(selectedMovie: Movies)
   {
     this.movieList.update(selectedMovie.id, {
+      id: selectedMovie.id,
       tittle: selectedMovie.tittle,
       year: selectedMovie.year,
       duration: selectedMovie.duration,
       description: selectedMovie.description
     });
   }
- /*
+
   deleteMovie(id: number)
   {
     this.movieList.remove(id);
   }
 */
-  openForEdit(movie: Movies) {
-    this.selectedMovie = movie;
-  }
+ 
 
   addorEdit(){
     if (this.selectedMovie.id === 0){

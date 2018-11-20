@@ -18,7 +18,19 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     this.movieList = this.movieService.getMovies();
+    
   }
+/*
+  edit(movie: Movies) {
+    this.movieService.selectedMovie = Object.assign({movie});
+  }
+*/
+  openForEdit(movie: Movies) {
+    this.movieService.selectedMovie = movie;
+  }
+  
+
+ 
 
     
 }

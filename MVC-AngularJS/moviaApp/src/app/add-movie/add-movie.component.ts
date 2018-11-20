@@ -16,6 +16,7 @@ export class AddMovieComponent implements OnInit {
 
   ngOnInit() {
     this.movieService.getMovies();
+
     this.resetForm();
   }
 
@@ -23,10 +24,11 @@ export class AddMovieComponent implements OnInit {
   {
     if(movieForm.value.id == null)
       this.movieService.insertMovie(movieForm.value);
-    else
-    this.movieService.updateMovie(movieForm.value);
+    else {
+     /* this.movieService.updateMovie(movieForm.value);
     
-    this.resetForm(movieForm);
+      this.resetForm(movieForm);*/
+    }
   }
 
   resetForm(movieForm?: NgForm)
@@ -35,7 +37,7 @@ export class AddMovieComponent implements OnInit {
       movieForm.reset();
       this.movieService.selectedMovie = new Movies();
   }
-
+ 
 
 }
 
