@@ -27,12 +27,29 @@ export class MyserviceService {
 
   insertMovie(selectedMovie: Movies) {
     this.movieList.push({
-      id: selectedMovie.id,
+      id: selectedMovie.id = this.movieList.length + 1,
       tittle: selectedMovie.tittle,
       year: selectedMovie.year,
       duration: selectedMovie.duration,
       description: selectedMovie.description
-    });
+    })
+    this.selectedMovie = new Movies();
+  }
+
+  addorEdit(){
+    if (this.selectedMovie.id === 0){
+    this.selectedMovie.id = this.movieList.length + 1;
+    this.movieList.push(this.selectedMovie);
+    }
+    this.selectedMovie = new Movies();
+  }
+
+  edit(movie: Movies) {
+    this.selectedMovie = Object.assign({movie});
+  }
+/*
+  openForEdit(movie: Movies) {
+    this.movieService.selectedMovie = movie;
   }
 /*
   updateMovie(selectedMovie: Movies)
@@ -51,15 +68,7 @@ export class MyserviceService {
     this.movieList.remove(id);
   }
 */
- 
-
-  addorEdit(){
-    if (this.selectedMovie.id === 0){
-    this.selectedMovie.id = this.movieList.length + 1;
-    this.movieList.push(this.selectedMovie);
-    }
-    this.selectedMovie = new Movies();
-  }
+  
 
   delete(){
     if( confirm("Are you sure you want to delete it?")){

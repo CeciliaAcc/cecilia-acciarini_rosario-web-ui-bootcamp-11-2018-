@@ -12,12 +12,18 @@ import { Movies } from '../models/movies';
 })
 export class AddMovieComponent implements OnInit {
 
+  selectedMovie: Movies = new Movies();
+  public movieId : number;
+  private sub: any;
+
   constructor(private route: ActivatedRoute ,private movieService: MyserviceService) { }
 
   ngOnInit() {
-    this.movieService.getMovies();
+    this.sub = +this.route.params.subscribe(params => {
+      this.movieId = +params['id'];
+    });
 
-    this.resetForm();
+    this.selectedMovie = this.movieService.getMovieById(this.movieId);
   }
 
   onSubmit(movieForm: NgForm)
@@ -30,6 +36,10 @@ export class AddMovieComponent implements OnInit {
       this.resetForm(movieForm);*/
     }
   }
+
+ 
+
+  
 
   resetForm(movieForm?: NgForm)
   {

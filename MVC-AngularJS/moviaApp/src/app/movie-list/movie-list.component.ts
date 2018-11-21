@@ -11,6 +11,7 @@ import { Movies } from '../models/movies';
 export class MovieListComponent implements OnInit {
   
   movieList: Movies[];
+  selectedMovie: Movies;
   
   constructor(private movieService: MyserviceService) {
   
@@ -20,14 +21,8 @@ export class MovieListComponent implements OnInit {
     this.movieList = this.movieService.getMovies();
     
   }
-/*
-  edit(movie: Movies) {
-    this.movieService.selectedMovie = Object.assign({movie});
-  }
-*/
-  openForEdit(movie: Movies) {
-    this.movieService.selectedMovie = movie;
-  }
+
+  
   
 
  

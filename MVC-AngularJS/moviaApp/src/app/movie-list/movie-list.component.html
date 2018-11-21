@@ -17,14 +17,14 @@
             <div class="buttons">
                 <button [routerLink]="['/movie/id/', movie.id]"  class="buttonDetail">Detail</button>
                 
-                <button [routerLink]="['/movieForm', movie.id]"  (click)="edit(movie)" class="buttonEdit">Edit</button>      
+                <button [routerLink]="['/movieForm', movie.id]"  class="buttonEdit">Edit</button>      
             </div> 
         </ul> 
       
     </div>        
         
     <div class="movieList-footer">
-        <button  routerLink="/movieForm" class="buttonAdd">
+        <button  routerLink="['/movieForm', movie.id]" class="buttonAdd">
             Add movie
         </button>
     </div>
