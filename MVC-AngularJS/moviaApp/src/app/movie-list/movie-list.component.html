@@ -1,5 +1,4 @@
-
-
+ 
     <div class="movieList" ng-controller="Movies" >
     
     <div class="movieList-header">
@@ -21,9 +20,9 @@
         </ul> 
       
     </div>        
-        
+    
     <div class="movieList-footer"> 
-        <button  [routerLink]="['/movieForm/Add/']" class="buttonAdd"> Add movie </button>
+        <button  routerLink="movieForm/Add/" routerLinkActive="active" class="buttonAdd" type="button"> Add movie </button>
     </div>
 
     </div>

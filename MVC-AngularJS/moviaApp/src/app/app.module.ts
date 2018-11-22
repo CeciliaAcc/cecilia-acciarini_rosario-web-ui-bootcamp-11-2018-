@@ -4,9 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { MyserviceService } from './myservice.service';
@@ -26,8 +23,6 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule

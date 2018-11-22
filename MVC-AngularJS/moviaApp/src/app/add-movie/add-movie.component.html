@@ -6,7 +6,7 @@
     
     <h3>Movie Form</h3>
     
-    <form role="form" #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)" >
+    <form role="form" #movieFormAdd="ngForm" (ngSubmit)="onSubmitAdd(movieFormAdd)" >
         
         <input type="hidden" name="id" #id="ngModel" [(ngModel)]="movieService.selectedMovie.id">
 
@@ -45,7 +45,7 @@
         <button type="submit" routerLink = "/" class="btn btn-primary btn-sm" id="btnSaveChange">
             Save changes
         </button>
-        <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(movieForm)" id="btnReset">
+        <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(movieFormAdd)" id="btnReset">
             <i class="fas fa-sync-alt"></i> Reset
         </button>
          

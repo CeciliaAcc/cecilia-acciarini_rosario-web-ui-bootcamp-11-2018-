@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { MyserviceService } from '../myservice.service';
 import { Movies } from '../models/movies';
@@ -17,15 +17,15 @@ export class AddMovieComponent implements OnInit {
   public movieId : number;
   private sub: any;
 
-  constructor(private route: Router ,private movieService: MyserviceService) { }
+  constructor(private route: ActivatedRoute ,private movieService: MyserviceService) { }
 
   ngOnInit() {
 
   }
 
-  onSubmit(movieForm: NgForm)
+  onSubmitAdd(movieFormAdd: NgForm)
   {
-    if(movieForm.value.id == null){
+    if(movieFormAdd.value.id == null){
 
       this.selectedMovie.id = this.movieService.movieList.length + 1;
       this.movieService.movieList.push(this.selectedMovie);
@@ -33,10 +33,10 @@ export class AddMovieComponent implements OnInit {
     }
   }
 
-  resetForm(movieForm?: NgForm)
+  resetForm(movieFormAdd?: NgForm)
   {
-    if(movieForm != null)
-      movieForm.reset();
+    if(movieFormAdd != null)
+      movieFormAdd.reset();
       this.movieService.selectedMovie = new Movies();
   }
 

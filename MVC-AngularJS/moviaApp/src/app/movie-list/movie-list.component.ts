@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router } from '@angular/router';
 import { MyserviceService } from '../myservice.service';
 import { Movies } from '../models/movies';
 
@@ -13,12 +14,14 @@ export class MovieListComponent implements OnInit {
   movieList: Movies[];
   selectedMovie: Movies;
   
-  constructor(private movieService: MyserviceService) {
+  constructor(private movieService: MyserviceService, private route: Router) {
   
    }
 
   ngOnInit() {
     this.movieList = this.movieService.getMovies();
+
+    this.route.navigate['movieForm/Add/']
     
     
   }
