@@ -1,4 +1,4 @@
-<div class="container" id="addMovieForm">
+<div class="container" id="movieFormAdd">
     
     <button type="button" routerLink = "/" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -42,13 +42,17 @@
             <textarea type="text" [(ngModel)]="movieService.selectedMovie.description" class="form-control" name="inputdescription" rows="3"></textarea>
         </div>   
         
-        <button type="submit" class="btn btn-primary btn-sm" id="btnSaveChange">
+        <button type="submit" routerLink = "/" class="btn btn-primary btn-sm" id="btnSaveChange">
             Save changes
         </button>
-        <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(productForm)" id="btnReset">
+        <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(movieForm)" id="btnReset">
             <i class="fas fa-sync-alt"></i> Reset
         </button>
          
     </form>
+    <section>
+        <router-outlet></router-outlet>
+    </section>  
+
 </div>            
       

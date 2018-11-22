@@ -24,6 +24,19 @@ export class MyserviceService {
   getMovies() {
     return this.movieList;
   }
+  
+  getMovieById(id: number){
+    for (let movie of this.movieList){
+      if (movie.id == id){
+        this.selectedMovie = movie;
+        return this.selectedMovie
+      }
+      else {
+
+      }
+    }
+    
+  }
 
   insertMovie(selectedMovie: Movies) {
     this.movieList.push({
@@ -36,58 +49,19 @@ export class MyserviceService {
     this.selectedMovie = new Movies();
   }
 
-  addorEdit(){
-    if (this.selectedMovie.id === 0){
-    this.selectedMovie.id = this.movieList.length + 1;
-    this.movieList.push(this.selectedMovie);
-    }
-    this.selectedMovie = new Movies();
-  }
-
   edit(movie: Movies) {
     this.selectedMovie = Object.assign({movie});
   }
-/*
-  openForEdit(movie: Movies) {
-    this.movieService.selectedMovie = movie;
-  }
-/*
-  updateMovie(selectedMovie: Movies)
-  {
-    this.movieList.update(selectedMovie.id, {
-      id: selectedMovie.id,
-      tittle: selectedMovie.tittle,
-      year: selectedMovie.year,
-      duration: selectedMovie.duration,
-      description: selectedMovie.description
-    });
-  }
 
-  deleteMovie(id: number)
-  {
-    this.movieList.remove(id);
+  openForEdit(movie: Movies) {
+    this.selectedMovie = movie;
   }
-*/
-  
 
   delete(){
     if( confirm("Are you sure you want to delete it?")){
       this.movieList = this.movieList.filter(x => x != this.selectedMovie);
       this.selectedMovie = new Movies();
     }
-  }
-
-  getMovieById(id: number){
-    for (let movie of this.movieList){
-      if (movie.id == id){
-        this.selectedMovie = movie;
-        return this.selectedMovie
-      }
-      else {
-
-      }
-    }
-    
   }
   
 }

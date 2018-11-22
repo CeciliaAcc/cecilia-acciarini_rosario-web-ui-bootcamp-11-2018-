@@ -13,6 +13,7 @@ import { MyserviceService } from './myservice.service';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MovieListComponent,
     AddMovieComponent,
     MovieDetailsComponent,
+    EditMovieComponent,
   ],
   imports: [
     BrowserModule,

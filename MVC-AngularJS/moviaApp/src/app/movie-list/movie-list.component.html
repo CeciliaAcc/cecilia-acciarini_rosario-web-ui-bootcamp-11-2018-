@@ -15,18 +15,15 @@
                 {{movie.id}} - {{movie.tittle}}
                        
             <div class="buttons">
-                <button [routerLink]="['/movie/id/', movie.id]"  class="buttonDetail">Detail</button>
-                
-                <button [routerLink]="['/movieForm', movie.id]"  class="buttonEdit">Edit</button>      
+                <button [routerLink]="['/movie/id/', movie.id]" class="buttonDetail">Detail</button>
+                <button [routerLink]="['/movieForm/Edit/', movie.id]"  class="buttonEdit">Edit</button>             
             </div> 
         </ul> 
       
     </div>        
         
-    <div class="movieList-footer">
-        <button  routerLink="['/movieForm', movie.id]" class="buttonAdd">
-            Add movie
-        </button>
+    <div class="movieList-footer"> 
+        <button  [routerLink]="['/movieForm/Add/']" class="buttonAdd"> Add movie </button>
     </div>
 
     </div>
