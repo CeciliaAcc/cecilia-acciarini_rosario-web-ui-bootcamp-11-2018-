@@ -1,0 +1,32 @@
+<div class="container-fluid" id="movieDetail">
+    <div class="row">
+      <div class="col-md-12">
+
+          <button type="button" routerLink = "/" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+
+          <h3>{{selectedMovie.tittle}}</h3>
+        <dl>
+          <dt>
+            Year
+          </dt>
+          <dd>
+              {{selectedMovie.year}}
+          </dd>
+          <dt>
+            Duration
+          </dt>
+          <dd>
+              {{selectedMovie.duration}}
+          </dd>
+          <dt>
+            Description
+          </dt>
+          <dd>
+              {{selectedMovie.description}}
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>

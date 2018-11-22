@@ -1,0 +1,57 @@
+<div class="container" id="movieFormEdit">
+    
+  <button type="button" routerLink = "/" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  
+  <h3>Movie Form</h3>
+  
+  <form role="form" #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)" >
+      
+      <input type="hidden" name="id" #id="ngModel" [(ngModel)]="movieService.selectedMovie.id">
+
+      <div class="form-group">
+           
+          <label for="formControlSelect1">
+              Title
+          </label>
+          <input type="text" [(ngModel)]="movieService.selectedMovie.tittle" class="form-control" name="inputtitle" placeholder="Ingrese el nombre">
+      </div>
+      
+      <div class="form-group">
+  
+          <label for="formControlSelect2">
+              Year
+          </label>
+          <input type="number" [(ngModel)]="movieService.selectedMovie.year" class="form-control" name="inputyear" placeholder="Ingrese el año de estreno">
+      </div>
+      
+      <div class="form-group">
+  
+          <label for="formControlSelect3">
+              Duration
+          </label>
+          <input type="number" [(ngModel)]="movieService.selectedMovie.duration" class="form-control" name="inputduration" placeholder="Ingrese la duracion (en minutos)">
+      </div>
+      
+      <div class="form-group">
+  
+          <label for="exampleFormControlTextarea1">
+              Write a short description
+          </label>
+          <textarea type="text" [(ngModel)]="movieService.selectedMovie.description" class="form-control" name="inputdescription" rows="3"></textarea>
+      </div>   
+      
+      <button type="submit" routerLink = "/" class="btn btn-primary btn-sm" id="btnSaveChange">
+          Save changes
+      </button>
+      <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(movieForm)" id="btnReset">
+          <i class="fas fa-sync-alt"></i> Reset
+      </button>
+      <button routerLink = "/" class="btn btn-danger btn-sm" type="delete" (click)="delete(movieForm)" id="btnDelete">
+          <i class="fas fa-sync-alt"></i> Delete
+      </button>
+       
+  </form>
+</div>            
+    
