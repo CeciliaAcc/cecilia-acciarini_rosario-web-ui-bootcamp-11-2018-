@@ -1,12 +1,12 @@
 <div class="container" id="movieFormEdit">
     
-  <button type="button" routerLink = "/" class="close" data-dismiss="modal" aria-label="Close">
+  <button type="button" routerLink = "/"  class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
   </button>
   
   <h3>Movie Form</h3>
   
-  <form role="form" #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)" >
+  <form role="form" #movieForm="ngForm">
       
       <input type="hidden" name="id" #id="ngModel" [(ngModel)]="movieService.selectedMovie.id">
 
@@ -15,7 +15,7 @@
           <label for="formControlSelect1">
               Title
           </label>
-          <input type="text" [(ngModel)]="movieService.selectedMovie.tittle" class="form-control" name="inputtitle" placeholder="Ingrese el nombre">
+          <input type="text" [(ngModel)]="movieService.selectedMovie.tittle" class="form-control" name="tittle" placeholder="Ingrese el nombre">
       </div>
       
       <div class="form-group">
@@ -23,7 +23,7 @@
           <label for="formControlSelect2">
               Year
           </label>
-          <input type="number" [(ngModel)]="movieService.selectedMovie.year" class="form-control" name="inputyear" placeholder="Ingrese el año de estreno">
+          <input type="number" [(ngModel)]="movieService.selectedMovie.year" class="form-control" name="year" placeholder="Ingrese el año de estreno">
       </div>
       
       <div class="form-group">
@@ -31,7 +31,7 @@
           <label for="formControlSelect3">
               Duration
           </label>
-          <input type="number" [(ngModel)]="movieService.selectedMovie.duration" class="form-control" name="inputduration" placeholder="Ingrese la duracion (en minutos)">
+          <input type="number" [(ngModel)]="movieService.selectedMovie.duration" class="form-control" name="duration" placeholder="Ingrese la duracion (en minutos)">
       </div>
       
       <div class="form-group">
@@ -39,16 +39,13 @@
           <label for="exampleFormControlTextarea1">
               Write a short description
           </label>
-          <textarea type="text" [(ngModel)]="movieService.selectedMovie.description" class="form-control" name="inputdescription" rows="3"></textarea>
+          <textarea type="text" [(ngModel)]="movieService.selectedMovie.description" class="form-control" name="description" rows="3"></textarea>
       </div>   
       
-      <button type="submit" routerLink = "/" class="btn btn-primary btn-sm" id="btnSaveChange">
+      <button type="button" (click)="onSubmit(movieForm)" routerLink = "/" class="btn btn-primary btn-sm" id="btnSaveChange">
           Save changes
       </button>
-      <button class="btn btn-secondary btn-sm" type="reset" (click)="resetForm(movieForm)" id="btnReset">
-          <i class="fas fa-sync-alt"></i> Reset
-      </button>
-      <button routerLink = "/" class="btn btn-danger btn-sm" type="delete" (click)="delete(movieForm)" id="btnDelete">
+      <button type="button" (click)="delete(movieForm)" routerLink = "/" class="btn btn-danger btn-sm"  id="btnDelete">
           <i class="fas fa-sync-alt"></i> Delete
       </button>
        

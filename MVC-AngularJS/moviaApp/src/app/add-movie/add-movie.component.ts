@@ -25,22 +25,9 @@ export class AddMovieComponent implements OnInit {
 
   onSubmitAdd(movieFormAdd: NgForm)
   {
-    if(movieFormAdd.value.id == null){
-
-      this.selectedMovie.id = this.movieService.movieList.length + 1;
-      this.movieService.movieList.push(this.selectedMovie);
-      this.selectedMovie = new Movies(); 
-    }
+      movieFormAdd.value.id = this.movieService.movieList.length + 1;
+      this.movieService.insertMovie(movieFormAdd.value);
   }
-
-  resetForm(movieFormAdd?: NgForm)
-  {
-    if(movieFormAdd != null)
-      movieFormAdd.reset();
-      this.movieService.selectedMovie = new Movies();
-  }
-
- 
 
 }
 

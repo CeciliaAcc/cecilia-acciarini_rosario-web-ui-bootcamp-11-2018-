@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movies } from './models/movies';
+import { identity } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,30 +37,34 @@ export class MyserviceService {
     }
     
   }
+  insertMovie(movie: Movies){
+    var start_index = this.movieList.length;
+    var number_of_elements_to_remove = 0;
+    this.movieList.splice(start_index, number_of_elements_to_remove, movie);
+    
+    console.log("Adding movie id:", movie.id);
+    console.log(this.movieList);
 
-  insertMovie(selectedMovie: Movies) {
-    this.movieList.push({
-      id: selectedMovie.id = this.movieList.length + 1,
-      tittle: selectedMovie.tittle,
-      year: selectedMovie.year,
-      duration: selectedMovie.duration,
-      description: selectedMovie.description
-    })
-    this.selectedMovie = new Movies();
+  }
+  
+  updateMovie(movie: Movies){ 
+    var start_index = movie.id -1;
+    console.log("start index ", start_index);
+    var number_of_elements_to_remove = 1;
+    this.movieList.splice(start_index, number_of_elements_to_remove, movie);
+    console.log(this.movieList)
   }
 
-  edit(movie: Movies) {
-    this.selectedMovie = Object.assign({movie});
-  }
-
-  openForEdit(movie: Movies) {
-    this.selectedMovie = movie;
-  }
-
-  delete(){
+  delete(movie: Movies){
     if( confirm("Are you sure you want to delete it?")){
-      this.movieList = this.movieList.filter(x => x != this.selectedMovie);
-      this.selectedMovie = new Movies();
+      var start_index = movie.id -1;
+      console.log("start index ", start_index);
+      var number_of_elements_to_remove = 1;
+      this.movieList.splice(start_index, number_of_elements_to_remove);
+      
+      console.log("deleting movie id:", movie.id);
+      console.log(this.movieList);
+      
     }
   }
   
