@@ -14,15 +14,15 @@
                 {{movie.id}} - {{movie.tittle}}
                        
             <div class="buttons">
-                <button [routerLink]="['/movie/id/', movie.id]" class="buttonDetail">Detail</button>
-                <button [routerLink]="['/movieForm/Edit/', movie.id]"  class="buttonEdit">Edit</button>             
+                <button (click) = "callRouteDetail(movie.id)"  class="buttonDetail">Detail</button>
+                <button (click) = "callRouteEdit(movie.id)"   class="buttonEdit">Edit</button>             
             </div> 
         </ul> 
       
     </div>        
     
     <div class="movieList-footer"> 
-        <button  routerLink="movieForm/Add/" routerLinkActive="active" class="buttonAdd" type="button"> Add movie </button>
+        <button (click) = "callRouteAddMovie()" class="buttonAdd" type="button"> Add movie </button>
     </div>
 
     </div>

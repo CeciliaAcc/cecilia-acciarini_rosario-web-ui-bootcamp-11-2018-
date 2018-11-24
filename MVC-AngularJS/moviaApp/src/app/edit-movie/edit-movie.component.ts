@@ -27,39 +27,15 @@ export class EditMovieComponent implements OnInit {
     }
 
     onSubmit(movieForm: NgForm)
-    {
-      if(movieForm.value.id == null){
-
-        this.selectedMovie.id = this.movieService.movieList.length + 1;
-        this.movieService.movieList.push(this.selectedMovie);
-        this.selectedMovie = new Movies(); }
-
-      else {/*
+    {   
+        movieForm.value.id = this.movieService.selectedMovie.id;
         this.movieService.updateMovie(movieForm.value);
-      
-        this.resetForm(movieForm);
-      
-      /* openEdit(movie: Movies) {
-          this.editShow = true;
-          this.editedMovie = movie;
-        }
-        */
-      }
-    }
-
-    resetForm(movieForm?: NgForm)
-    {
-      if(movieForm != null)
-        movieForm.reset();
-        this.movieService.selectedMovie = new Movies();
     }
 
     delete(movieForm: NgForm)
     {
-      if(movieForm != null)
-        this.movieService.delete();
+      this.movieService.delete(movieForm.value);
     }
   
-
 }
 
